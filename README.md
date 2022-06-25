@@ -36,17 +36,30 @@ It's a good practice to have a directory called `Dev` inside your home directory
 ## Instructions
 
 - Open up a terminal (Applications->Utilities->Terminal)
+done
 - Find out what directory you're in using `pwd`
+done
 - You know where you are, but not what's around you. Take a look around with `ls`
+done
 - You probably started in your home directory, but just in case, tell the terminal to move to your home directory with `cd ~`. Use `pwd` again to confirm.
+done
 - Change into your Dev directory with `cd Dev`. If you don't have one you should create one (see above)
+done
 -  Now let's try printing the contents of a file. First we need to create the file. One quick way to do that is with the command `echo "Hello Terminal" >myFile.txt`. We'll explain this command in greater detail in the next lab.
+done
 -  Use `ls` to list the contents of your directory after running that command to see what changed.
+done
 -  Now show the contents of that new file using the `cat` command.
+done
 -  You can use `cat` to print the contents of multiple files; Create another file the same way you created myFile.txt and then print them both together (eg: `cat myFile.txt myFile2.txt`)
+done
 -  Using `cat` is fine for small files, or when you just want to print the entire contents of a file, but if you want to read through a large file it's not great. Try using cat on the file `/etc/bashrc_Apple_Terminal`
+it is done
 -  That file's a bit big for `cat`; try viewing it again with `less`. You can move around in `less` using ENTER, SPACE, and your arrow keys. To exit less, press the letter `q`. (note that if this is the first time you've used the terminal, your .bash_history file may still be very small)
+done
 -  The last command for you to try out is `grep`. You can use this to search for a pattern in a file or other body of text. Try using it on that first file you created like this: `grep Hello myFile.txt`. Notice that the result is the whole line where the text you searched for occurs. What happens if you use grep to search for something that isn't in the file?
+nothing! it just gives a new blank line
+
 
 
 # Part 2
@@ -85,8 +98,11 @@ In lab 1 you learned one way to create a file using the `echo` command and outpu
 To create a file using touch, simply type the command followed by the name of the file you want to create, like this: `touch filename`. Touch is actually meant to update the timestamp on files, but as a side effect it creates files that are named but don't already exist. It's time to practice `touch`ing files
 
 - Use `touch` to create two files, called myfile1 and myfile2
+done
 - Try using `touch` to create three more files, but all in the same command. Just give touch the filenames you want one right after the other, separated by a space
+done
 - Use the `ls -lT` (that's a lowercase 'L' after the dash) command to see the full timestamps of the files you just created. Notice that the first two are different but the last three are all the same.
+done
 
 -
 
@@ -106,42 +122,68 @@ There are many text editors out there. We will be using an editor called VIM (sh
 -
 
 - Let's create a file with vim. Start by opening the program with the `vim` command.
+done
 - This is the editor screen. VIM has two modes, insert mode and normal mode; it starts in normal mode. The `esc` key switches to normal mode from insert mode but not the other way -- if you ever get lost just hit escape.
 - We want to create a file, but we don't need anything in it yet. To save your current file you can use the `:w` command from normal mode. Type `:w myfile6` to save this empty file as "myfile6"
+done
 - Quit VIM with the `:q` command and list the contents of your directory to confirm that you created a file (Shortcut: `:wq` allows you to save a file and quit with just one command)
+done
 - Open that file by running vim with the filename. This time we'll add a little text.
+done
 - Switch to insert mode by pressing the `a` key and type the message "Hello Editor!". Remember to press `esc` when you finish to switch back to normal mode.
+done
 - Save the file (remember how?)
+Yes and done!
 - Let's make that message a little more specific. Delete the word 'Editor' and replace it with VIM. Look at the list of commands to see how to do this. Save the changed file.
+done
 - One powerful feature in VIM is the ability to repeat commands automatically. Type the number 10 before using the `A` (note that it's capitalized) command to add text to the end of the line; Press enter to go to the next line and then type a short message. See what happens when you finish the message and press `esc`
+It wrote it 10 times!
 - Now that you have several lines in your file, line numbers might be helpful. Enable them using the `:set number` command.
+done
 - Ten copies of the same message might be a bit too much. Move the cursor to line 2 and type `9dd`. You should now see only one line of your message.
+It's one line again!
 
 #### Creating directories
 
 
 - Use `mkdir` to make a directory with your name
+done
 - make two more directories inside of that one called "dir1" and "dir2"
+done
 - You can make directories in other places than your current directory, without `cd`ing into it, make a directory inside dir1. When you give the location of a file or directory relative to your current position that's called a relative path
 - Try making a directory inside dir2 by giving an absolute path. Absolute paths list the exact location of a file -- you've seen this before with the pwd command.
+done
 
 ### Copying, moving, and renaming
 - use the `cp` command to copy the file you wrote in the last section. Try using the man file for cp to see what the correct syntax is (anything between [] braces is optional)
+done
 - Make a new directory and then move the copied file you just created into that directory using the `mv` command.
+done
 - Let's change the name of that file. The `mv` command doesn't have to move a file to a new location; it can simply change the name of the file in place. Change the name to something that starts with a dot (.) such as ".myFile"
+done
 - Now check the contents of your directory with `ls`. Where is the file you just renamed? In Linux and Unix systems, files and directories with names starting in "." are hidden, so by renaming your file you actually made it a hidden file. Let's see how we can view hidden files with `ls`
+ok
 - The `man` command lets you view the man(ual) pages for any command that is documented. Try viewing the man pages for ls, cp, and mv. Once you've looked at each of these and have a feel for how they are laid out, take another look at the ls man page and see if you can figure out how to view hidden files (remember, hidden files begin with a dot '.' ) <sub>**hint**: viewing man pages is like using less; you can move up and down in the file with the keyboard and when you want to exit you can press the 'q' key*</sub>
+done!  ls -A
 
 ### Destroying files and directories
 
 - Make three files and two directories any way you like; create a file inside one of those directories.
+done
 - The `rm` command deletes files, try using that on one of the files you created.
+it worked!
 - Another way to delete a file is the `unlink` command. Use this to delete the second file.
+it worked!
 - Sometimes you want to make sure you are deleting the right files (particularly if you use the * wildcard). use `rm -i` to delete the last file and notice that you have to confirm it before it's deleted.
+done
 - Try to delete one of those directories with `rm`. Notice that on its own it won't delete directories.
+It is a directory!
 - Use `rmdir` (or `rm -d`) to delete the empty directory, then try it on the directory with a file in it.
+Directory is not empty
 - Directories can only be deleted when they are empty; this could get painful if you have a lot of files and directories inside of one you want to delete. Try deleting that directory again with the `rm -R` command. The `-R` flag tells `rm` to recursively delete the contents of each directory it encounters and then delete the directory.
+it worked!
 - **Bonus**: run the command `echo "Hello" >-toughFile` and then try to delete the file created by that command. There are at least two ways to do this.
+Unlink worked.  Did not find second method.
 
 
 ### The Art of Redirection
@@ -157,24 +199,33 @@ Remember in the previous lab when you typed the command `echo "Hello Terminal" >
 
 
 - Use the `find` command to search for all files on your machine with "core' in the name. You can do that with `find / -name core`.
+Permission denied!
 - That's a lot of "Permission denied" errors, and they make it hard to see the useful output from that command. Fortunately that's where output redirection becomes helpful: Those errors all go to STDERR, while the output we want is going to STDOUT. Use the commands above to redirect STDERR to `/dev/null`, effectively throwing away the output from STDERR.
+find / -name "core" 2> /dev/null
 - That's a little better. We want to search for specific core files in this output, so let's redirect STDOUT to a file called `corefiles.log`.
+find / -name "core" 2> /dev/null > corefiles.log
 - Next, use `grep` to search for any lines that contain the string 'lib'. We want the search to be case insensitive so we'll use the `-i` flag like so: `grep -i lib corefiles.log` (**note**: your file may have very few lines in it if your computer is rather new and has not had many programs installed yet. It may seem silly to use grep to search for a particular line in a file with only two lines, but when you're searching for an error that occurred only once in over 10000 lines of debugging output you will want to know this tool well.)
+done, found 6 entires
 - Great, but there's a quicker way to do this without creating a file and running two separate commands. Try using the `|` (pipe) character to redirect the output from `find` to the input for `grep`. Don't forget to throw out the STDERR output; we don't need grep to search through that since we already know it won't contain the files we're looking for.
+find / -name "core" 2> /dev/null | grep -i lib
 
 #### Backgrounding
 
 Did you notice how you had to wait a few seconds every time you ran that find command? Sometimes you may need to use a long-running command and don't want it to lock up your terminal the whole time it's running. That's when you would want to run it in the background (by default, any command you run on a terminal runs in the foreground. Let's play with backgrounding and foregrounding a bit.
 
 - Run that same `find | grep` command that you used in the last step, but add the background operator, `&`, to the end of it. Notice that you immediately get a prompt, but after a few seconds the result of the grep prints to the command line.
+Cool!
 - For now we won't worry about that output getting in the way, but this is another good example where you may want to redirect STDOUT to a file.
 
 Now let's practice one more backgrounding technique with a different command.
 
 - Run the command `python -m SimpleHTTPServer`. This will run forever until you kill it with ~~fire~~ `Ctrl`+`C`
+it worked!
 - Now you're stuck without your prompt; but we can fix that! Press `Ctrl`+`Z` to suspend (not kill) that program.
 - Now you've got your terminal back, but if you type `jobs` you'll see that python is currently stopped. You can bring it back with `fg`, but that will block your prompt again; instead, use `bg` to resume it in the background.
+done
 - Now that you've resumed python in the background, you can see it listed as running in `jobs`. Bring it back to the foreground with `fg` and then kill it with `Ctrl`+`C`
+done
  
 
 ## Other Resources
